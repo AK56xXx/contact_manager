@@ -45,6 +45,15 @@ class _AddContactPage extends State<AddContactPage> {
     }
   }
 
+  @override
+  void dispose() {
+    nameController.dispose();
+    phoneController.dispose();
+    emailController.dispose();
+
+    super.dispose();
+  }
+
 
 
 
