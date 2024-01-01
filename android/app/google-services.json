@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "52793499562",
+    "firebase_url": "https://fir-server-3c42f-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "fir-server-3c42f",
+    "storage_bucket": "fir-server-3c42f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:52793499562:android:baf09365a20094b30ed5d3",
+        "android_client_info": {
+          "package_name": "com.example.contact_manager"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO37VHPLKBZdeKADkm4oQ5lO0yIGvvyGU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:52793499562:android:26fb139449bf34510ed5d3",
+        "android_client_info": {
+          "package_name": "com.example.firebase_ge2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO37VHPLKBZdeKADkm4oQ5lO0yIGvvyGU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
