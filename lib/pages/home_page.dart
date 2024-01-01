@@ -56,6 +56,7 @@ class _HomePageState extends State<HomePage> {
                 setState(() {});
               },
             ),
+            const SizedBox(height: 20),
             Expanded(
               child: StreamBuilder<QuerySnapshot>(
                 stream: _searchController.text.isEmpty
