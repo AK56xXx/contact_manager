@@ -79,52 +79,58 @@ class _HomePageState extends State<HomePage> {
                         final email = contact['email'];
                         final avatar = 'https://api.dicebear.com/7.x/initials/svg?seed=$name';
 
-                        return ListTile(
-                          leading: Hero(
-                            tag: contactId,
-                            child: SizedBox.square(
-                              child: SvgPicture.network(
-                                avatar,
-                                height: 50,
-                                width: 50,
+                        return Dismissible(
+                          key: Key(contactId),
+                          onDismissed: (direction) {
+                            deleteContact(contactId);
+                          },
+                          direction: DismissDirection.endToStart,
+                          background: Container(
+                            alignment: Alignment.centerRight,
+                            color: Colors.red,
+                            child: const Icon(Icons.delete, color: Colors.white),
+                          ),
+                          child: ListTile(
+                            leading: Hero(
+                              tag: contactId,
+                              child: SizedBox.square(
+                                child: SvgPicture.network(
+                                  avatar,
+                                  height: 50,
+                                  width: 50,
+                                ),
                               ),
                             ),
-                          ),
-                          title: Text(name),
-                          subtitle: Text("$phone\n $email"),
-                          trailing: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              IconButton(
-                                onPressed: () {
-                                  FlutterPhoneDirectCaller.callNumber(phone);
-                                },
-                                icon: const Icon(IconlyBroken.call),
-                              ),
-                              IconButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => EditContactPage(
-                                        id: contactId,
-                                        avatar: avatar,
-                                        name: name,
-                                        phone: phone,
-                                        email: email,
+                            title: Text(name),
+                            subtitle: Text("$phone\n$email"),
+                            trailing: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                IconButton(
+                                  onPressed: () {
+                                    FlutterPhoneDirectCaller.callNumber(phone);
+                                  },
+                                  icon: const Icon(IconlyBroken.call),
+                                ),
+                                IconButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => EditContactPage(
+                                          id: contactId,
+                                          avatar: avatar,
+                                          name: name,
+                                          phone: phone,
+                                          email: email,
+                                        ),
                                       ),
-                                    ),
-                                  );
-                                },
-                                icon: const Icon(IconlyBroken.edit),
-                              ),
-                              IconButton(
-                                onPressed: () {
-                                  deleteContact(contactId);
-                                },
-                                icon: const Icon(IconlyBroken.delete),
-                              ),
-                            ],
+                                    );
+                                  },
+                                  icon: const Icon(IconlyBroken.edit),
+                                ),
+                              ],
+                            ),
                           ),
                         );
                       },
